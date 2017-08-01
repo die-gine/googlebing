@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import packt.selenium.chap3_9.pageobjects.Google;
 import packt.selenium.chap3_9.pageobjects.GoogleSearchPage;
 
@@ -21,13 +21,14 @@ public class SearchGoogleTest {
 
     @Before
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\rwild\\Desktop\\vortrag testing\\Ex_Files_Selenium_Testing_Tools\\Ex_Files_Selenium_Testing_Tools\\Final Example Code\\Chapter1\\src\\test\\resources\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
     @After
     public void tearDown() throws Exception {
-        driver.quit();
+     //  driver.quit();
     }
     @Test
     public void testGoogleSearch(){
